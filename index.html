@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div id="result">
-        <p>a</p>
+    <div>
+        <input type="text" id="function-name-input" placeholder="function名">
+        <textarea id="description-input" placeholder="functionの説明"></textarea>
     </div>
+    <div id="result">
+        #> <span id="function-name">function名</span><br>
+        #<br>
+        # <span id="description">説明</span><br>
+        #<br>
+        # <span id="scope">@public</span><span id="scope-within"></span>
+    </div>
+    <button>クリップボードにコピー</button>
+
+    <script>
+        document.getElementById("function-name-input").addEventListener("input", function () {
+            document.getElementById("function-name").innerText = document.getElementById("function-name-input").value
+        })
+        document.getElementById("description-input").addEventListener("input", function () {
+            document.getElementById("description").innerText = document.getElementById("description-input").value
+        })
+    </script>
 </body>
+
 </html>
